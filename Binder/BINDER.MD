@@ -39,7 +39,7 @@
 ### Rresentation & Reading Notes
 
 - [Rresentation](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/What%20is%20Science%20.pdf)
-- [Reading Notes](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week1.pdf)
+- [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week1.pdf)
 
 ## Topic 3: What is Theory?
 
@@ -52,7 +52,7 @@
 
 ### Rresentation & Reading Notes
 
-- [Reading Notes](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week2.pdf)
+- [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week2.pdf)
 
 - [Presentation](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/What%20is%20theory_.pdf)
 
@@ -71,7 +71,7 @@
 
 ###  Rresentation & Reading Notes
 
-- [Reading Notes](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week3.pdf)
+- [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week3.pdf)
 - [Presentation]([Technological Determinism.pdf](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/Technological Determinism.pdf))
 
 
@@ -80,7 +80,7 @@
 
 ### Rresentation & Reading Notes
 
-- [Reading Notes](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week4.pdf)
+- [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week4.pdf)
 - [Presentation](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/SocialConstruction%20ofTechnology.pdf)
 
 ### In Class Notes
@@ -142,7 +142,7 @@
 
 ### Rresentation & Reading Notes
 
-- [Reading Notes](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week6.pdf)
+- [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week6.pdf)
 - [Presentation](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/Green%20Team%20-%20Do%20Artifacts%20Have%20Politics_.pdf)
 
 ### In class Notes
@@ -179,7 +179,7 @@
 
 ### Rresentation & Reading Notes
 
-- [Reading Notes](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week9.pdf)
+- [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week9.pdf)
 - [Presentation](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/PoliticsScienceandthePublic.pdf)
 
 
@@ -197,7 +197,7 @@
 
 ### Rresentation & Reading Notes
 
-- [Reading Notes](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week11.pdf)
+- [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week11.pdf)
 - [Presentation](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/Presentation_Week11.pdf)
 
 ### In classs notes：
@@ -208,7 +208,7 @@
 
 ### Rresentation & Reading Notes
 
-- [Reading Notes](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week12.pdf)
+- [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week12.pdf)
 - [Presentation](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/The%20Internet%20in%20everyday%20life.pdf)
 
 ### In classs notes：
@@ -219,7 +219,7 @@
 
 ### Rresentation & Reading Notes
 
-- [Reading Notes](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week13.pdf)
+- [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week13.pdf)
 - [Presentation]()
 
 ### In classs notes：
