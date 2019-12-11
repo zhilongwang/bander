@@ -38,23 +38,23 @@
 
 ### Rresentation & Reading Notes
 
-- [Rresentation](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/What%20is%20Science%20.pdf)
+- [Rresentation](https://github.com/zhilongwang/bander/blob/master/Presentations/what_is_science.pdf)
 - [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week1.pdf)
 
 ## Topic 3: What is Theory?
 
 ### Material
 
-- [Text Book Matthewman](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/ReadingMaterials/Mathewman.pdf)
-- [What Theory is Not](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/ReadingMaterials/What%20theory%20is%20not.pdf)
-- [Comments on" What Theory is Not"](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/ReadingMaterials/Comments%20on%20%22What%20Theory%20is%20Not%22.pdf)
-- [What Theory is Not, Theorizing Is”](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/ReadingMaterials/What%20theory%20is%20not%2C%20theorizing%20is.pdf)
+- [Text Book Matthewman](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/ReadingMaterials/Mathewman.pdf)
+- [What Theory is Not](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/ReadingMaterials/What%20theory%20is%20not.pdf)
+- [Comments on" What Theory is Not"](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/ReadingMaterials/Comments%20on%20%22What%20Theory%20is%20Not%22.pdf)
+- [What Theory is Not, Theorizing Is”](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/ReadingMaterials/What%20theory%20is%20not%2C%20theorizing%20is.pdf)
 
 ### Rresentation & Reading Notes
 
 - [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week2.pdf)
 
-- [Presentation](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/What%20is%20theory_.pdf)
+- [Presentation](https://github.com/zhilongwang/bander/blob/master/Presentations/what_is_theory.pdf)
 
   
 
@@ -72,7 +72,7 @@
 ###  Rresentation & Reading Notes
 
 - [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week3.pdf)
-- [Presentation]([Technological Determinism.pdf](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/Technological Determinism.pdf))
+- [Presentation](https://github.com/zhilongwang/bander/blob/master/Presentations/technological_determinism.pdf)
 
 
 
@@ -81,7 +81,7 @@
 ### Rresentation & Reading Notes
 
 - [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week4.pdf)
-- [Presentation](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/SocialConstruction%20ofTechnology.pdf)
+- [Presentation](https://github.com/zhilongwang/bander/blob/master/Presentations/social_construction_of_technology.pdf)
 
 ### In Class Notes
 
@@ -129,7 +129,7 @@
 ### Rresentation & Reading Notes
 
 - [Reading Notes](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week5.pdf)
-- [Presentation](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/Actor-Network%20Theory.pdf)
+- [Presentation](https://github.com/zhilongwang/bander/blob/master/Presentations/actor_network_theory.pdf)
 
 ### Class Notes
 
@@ -143,11 +143,11 @@
 ### Rresentation & Reading Notes
 
 - [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week6.pdf)
-- [Presentation](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/Green%20Team%20-%20Do%20Artifacts%20Have%20Politics_.pdf)
+- [Presentation](https://github.com/zhilongwang/bander/blob/master/Presentations/do_artifacts_have_politics.pdf)
 
 ### In class Notes
 
-- science and technology are nalways influenced by government, society, and culture.
+- Science and technology are nalways influenced by government, society, and culture.
 
 
 
@@ -175,12 +175,10 @@
 
 ##Topic 9: Politics, Science and the Public  (Theory Showcase: Structuration and Adaptive Structuration Theories)
 
-
-
 ### Rresentation & Reading Notes
 
 - [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week9.pdf)
-- [Presentation](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/PoliticsScienceandthePublic.pdf)
+- [Presentation](https://github.com/zhilongwang/bander/blob/master/Presentations/politics_science_and_the_public.pdf)
 
 
 
@@ -191,25 +189,25 @@
 ### Rresentation & Reading Notes
 
 - [Host the lecture, no reading notes]()
-- [Presentation](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/Theory%20Showcase_%20Diffusionsof%20Innovation%20Theory.pdf)
+- [Presentation](https://github.com/zhilongwang/bander/blob/master/Presentations/theory_showcase_diffusions_of_innovation_theory.pdf)
 
-##Topic11: Theory Showcase: Institutional Theory
+##Topic11: Theory Showcase: Media
 
 ### Rresentation & Reading Notes
 
 - [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week11.pdf)
-- [Presentation](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/Presentation_Week11.pdf)
+- [Presentation](https://github.com/zhilongwang/bander/blob/master/Presentations/media.pdf)
 
 ### In classs notes：
 
 
 
-##Topic12: Theory Showcase: Institutional Theory(Everyday Life with Internet)
+##Topic12: Theory Showcase: Institutional Theory (Everyday Life with Internet)
 
 ### Rresentation & Reading Notes
 
 - [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week12.pdf)
-- [Presentation](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/The%20Internet%20in%20everyday%20life.pdf)
+- [Presentation](https://github.com/zhilongwang/bander/blob/master/Presentations/the_internet_in_everyday_life.pdf)
 
 ### In classs notes：
 
@@ -220,7 +218,8 @@
 ### Rresentation & Reading Notes
 
 - [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week13.pdf)
-- [Presentation]()
+- [Presentation_big_data](https://github.com/zhilongwang/bander/blob/master/Presentations/big_data.pdf)
+- [Presentation_future](https://github.com/zhilongwang/bander/blob/master/Presentations/Futures.pdf)
 
 ### In classs notes：
 
