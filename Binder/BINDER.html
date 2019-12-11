@@ -1,0 +1,519 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>BINDER</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-scroll { overflow-y: hidden; overflow-x: auto; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right-width: 1px; border-right-style: solid; border-right-color: rgb(221, 221, 221); background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; white-space: nowrap; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; border: none !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; background-repeat: initial initial; }
+.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right-style: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right-style: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background-color: rgba(255, 255, 0, 0.4); background-position: initial initial; background-repeat: initial initial; }
+@media print { 
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+html {
+	font-size: 19px;
+}
+
+html, body {
+	margin: auto;
+	background: #fefefe;
+}
+body {
+	font-family: "Vollkorn", Palatino, Times;
+	color: #333;
+	line-height: 1.4;
+	text-align: justify;
+}
+#write {
+	max-width: 960px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+	line-height: 1.53;
+	padding-top: 40px;
+}
+
+/* Typography
+-------------------------------------------------------- */
+
+#write>h1:first-child,
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+h1 {
+	margin-top: 1.6em;
+	font-weight: normal;
+	text-align: center;
+}
+
+h1 {
+	font-size:2em;
+}
+
+h2 {
+	margin-top:2em;
+	font-weight: normal;
+}
+
+h3 {
+	font-weight: normal;
+	font-style: italic;
+	margin-top: 3em;
+}
+
+
+h2, 
+h3{
+	text-align: left;
+}
+/* 
+h2:after{
+	border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+} */
+
+h1+h2, h2+h3 {
+	margin-top: 0.83em;
+}
+
+p,
+.mathjax-block {
+	margin-top: 0;
+	-webkit-hypens: auto;
+	-moz-hypens: auto;
+	hyphens: auto;
+}
+ul {
+	list-style: square;
+	padding-left: 1.2em;
+}
+ol {
+	padding-left: 1.2em;
+}
+blockquote {
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 1px solid #ddd;
+}
+code,
+pre {
+	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+	font-size: .9em;
+	background: white;
+}
+.md-fences{
+	margin-left: 1em;
+	padding-left: 1em;
+	border: 1px solid #ddd;
+	padding-bottom: 8px;
+	padding-top: 6px;
+	margin-bottom: 1.5em;
+}
+
+a {
+	color: #2484c1;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a img {
+	border: none;
+}
+h1 a,
+h1 a:hover {
+	color: #333;
+	text-decoration: none;
+}
+hr {
+	color: #ddd;
+	height: 1px;
+	margin: 2em 0;
+	border-top: solid 1px #ddd;
+	border-bottom: none;
+	border-left: 0;
+	border-right: 0;
+}
+.ty-table-edit {
+	background: #ededed;
+    padding-top: 4px;
+}
+table {
+	margin-bottom: 1.333333rem
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.333333rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
+}
+
+.task-list{
+	padding:0;
+}
+
+.md-task-list-item {
+	padding-left: 1.6rem;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.33333333rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #fefefe;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+.md-tag {
+	color: inherit;
+	font: inherit;
+}
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+}
+#write pre.md-meta-block {
+	white-space: pre;
+	background: #f8f8f8;
+	border: 0px;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+
+	margin-bottom: 2em;
+	margin-top: -1.3333333333333rem;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	line-height: 1.8em;
+	font-size: 0.9em;
+	font-size: 0.76em;
+	padding-left: 0;
+}
+.md-img-error.md-image>.md-meta{
+	vertical-align: bottom;
+}
+#write>h5.md-focus:before {
+	top: 2px;
+}
+
+.md-toc {
+	margin-top: 40px;
+}
+
+.md-toc-content {
+	padding-bottom: 20px;
+}
+
+.outline-expander:before {
+	color: inherit;
+	font-size: 14px;
+	top: auto;
+	content: "\f0da";
+	font-family: FontAwesome;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  	content: "\f0d7";
+}
+
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
+
+.html-for-mac #typora-sidebar {
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.typora-node .file-list-item-parent-loc, 
+.typora-node .file-list-item-time, 
+.typora-node .file-list-item-summary {
+	font-family: arial, sans-serif;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: calc(1rem - 12px);
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.md-fences .code-tooltip {
+	bottom: -2em !important;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-mac'><h1><a name="binder" class="md-header-anchor"></a><span>Binder</span></h1><hr /><p>&nbsp;</p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" style="" href="#binder">Binder</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n5"><a class="md-toc-inner" style="" href="#authors">Authors</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n10"><a class="md-toc-inner" style="" href="#textbook">TEXTBOOK</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n20"><a class="md-toc-inner" style="" href="#topic-1-introduction-to-the-class-explanation-of-the-syllabus-dr-tapia">Topic 1: Introduction to the class. Explanation of the syllabus. (Dr. Tapia)</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n21"><a class="md-toc-inner" style="" href="#things-to-do">Things To Do</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n26"><a class="md-toc-inner" style="" href="#topic-2-what-is-science">Topic 2: What is science</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n27"><a class="md-toc-inner" style="" href="#material">Material</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n31"><a class="md-toc-inner" style="" href="#rresentation--reading-notes">Rresentation &amp; Reading Notes</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n37"><a class="md-toc-inner" style="" href="#topic-3-what-is-theory">Topic 3: What is Theory?</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n38"><a class="md-toc-inner" style="" href="#material-n38">Material</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n48"><a class="md-toc-inner" style="" href="#rresentation--reading-notes-n48">Rresentation &amp; Reading Notes</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n55"><a class="md-toc-inner" style="" href="#class-notes">Class notes</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n58"><a class="md-toc-inner" style="" href="#topic-4-technological-determinism-and-functionalism">Topic 4: Technological Determinism and Functionalism?</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n59"><a class="md-toc-inner" style="" href="#rresentation--reading-notes-n59">Rresentation &amp; Reading Notes</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n66"><a class="md-toc-inner" style="" href="#topic-5-social-construction-of-technology">TOPIC 5: Social Construction of Technology</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n67"><a class="md-toc-inner" style="" href="#rresentation--reading-notes-n67">Rresentation &amp; Reading Notes</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n73"><a class="md-toc-inner" style="" href="#in-class-notes">In Class Notes</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n94"><a class="md-toc-inner" style="" href="#some-concepts">Some concepts:</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n114"><a class="md-toc-inner" style="" href="#topic-6-actor-network-theory">TOPIC 6: Actor Network Theory</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n115"><a class="md-toc-inner" style="" href="#rresentation--reading-notes-n115">Rresentation &amp; Reading Notes</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n121"><a class="md-toc-inner" style="" href="#class-notes-n121">Class Notes</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n128"><a class="md-toc-inner" style="" href="#topic-7do-artifacts-have-politics">TOPIC 7:Do Artifacts Have Politics?</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n129"><a class="md-toc-inner" style="" href="#rresentation--reading-notes-n129">Rresentation &amp; Reading Notes</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n135"><a class="md-toc-inner" style="" href="#in-class-notes-n135">In class Notes</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n143"><a class="md-toc-inner" style="" href="#topic-8-middle-term-testing">TOPIC 8: Middle term testing?</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n144"><a class="md-toc-inner" style="" href="#quizs"><strong>Quizs:</strong></a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n160"><a class="md-toc-inner" style="" href="#topic-9-politics-science-and-the-public--theory-showcase-structuration-and-adaptive-structuration-theories">Topic 9: Politics, Science and the Public  (Theory Showcase: Structuration and Adaptive Structuration Theories)</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n162"><a class="md-toc-inner" style="" href="#rresentation--reading-notes-n162">Rresentation &amp; Reading Notes</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n170"><a class="md-toc-inner" style="" href="#topic10-theory-showcase-diffusions-of-innovation-theory">Topic10: Theory Showcase: Diffusions of Innovation Theory</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n171"><a class="md-toc-inner" style="" href="#rresentation--reading-notes-n171">Rresentation &amp; Reading Notes</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n177"><a class="md-toc-inner" style="" href="#topic11-theory-showcase-institutional-theory">Topic11: Theory Showcase: Institutional Theory</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n178"><a class="md-toc-inner" style="" href="#rresentation--reading-notes-n178">Rresentation &amp; Reading Notes</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n184"><a class="md-toc-inner" style="" href="#in-classs-notes">In classs notes：</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n186"><a class="md-toc-inner" style="" href="#topic12-theory-showcase-institutional-theoryeveryday-life-with-internet">Topic12: Theory Showcase: Institutional Theory(Everyday Life with Internet)</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n187"><a class="md-toc-inner" style="" href="#rresentation--reading-notes-n187">Rresentation &amp; Reading Notes</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n193"><a class="md-toc-inner" style="" href="#in-classs-notes-n193">In classs notes：</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n195"><a class="md-toc-inner" style="" href="#topic-13-theory-showcase-foucault-and-theories-of-power">Topic 13: Theory Showcase: Foucault and theories of Power </a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n196"><a class="md-toc-inner" style="" href="#rresentation--reading-notes-n196">Rresentation &amp; Reading Notes</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n202"><a class="md-toc-inner" style="" href="#in-classs-notes-n202">In classs notes：</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n211"><a class="md-toc-inner" style="" href="#media-globalization-technology">Media, globalization, technology</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n239"><a class="md-toc-inner" style="" href="#the-uses-and-limits-of-theory">The uses and limits of Theory</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n277"><a class="md-toc-inner" style="" href="#mediated-politics">Mediated Politics</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n283"><a class="md-toc-inner" style="" href="#final-project">Final Project</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n312"><a class="md-toc-inner" style="" href="#notice-for-mini-project">Notice for mini project:</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n322"><a class="md-toc-inner" style="" href="#feadback-from-professor">Feadback from Professor</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n341"><a class="md-toc-inner" style="" href="#things-to-do-before-the-end-of-this-semester">Things to do before the end of this semester</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n343"><a class="md-toc-inner" style="" href="#qualify-exam-requirement">Qualify Exam Requirement</a></span></p></div><h2><a name="authors" class="md-header-anchor"></a><span>Authors</span></h2><ul><li><span>Zhilong Wang </span><a href='mailto:zzw169@psu.edu' target='_blank' class='url'>zzw169@psu.edu</a></li></ul><p>&nbsp;</p><h2><a name="textbook" class="md-header-anchor"></a><span>TEXTBOOK</span></h2><p>&nbsp;</p><ol start='' ><li><a href='https://epdf.pub/an-introduction-to-science-and-technology-studies-second-edition.html'><span>Sismondo, Sergio, (2010) An Introduction to Science and Technology Studies. Wiley Blackwell</span></a></li><li><a href='http://discovery.ucl.ac.uk/10040801/1/Social-Theory-after-the-Internet.pdf'><span>Schroeder, Ralph. 2018. Social Theory after the Internet. London, UCL Press.</span></a></li><li><a href='https://www.researchgate.net/publication/316314144_Theorizing_Technology'><span>Mathewmann, Steve, (2011) Technology and Social Theory Macmillan International Higher Education. </span></a></li></ol><p>&nbsp;</p><h2><a name="topic-1-introduction-to-the-class-explanation-of-the-syllabus-dr-tapia" class="md-header-anchor"></a><span>Topic 1: Introduction to the class. Explanation of the syllabus. (Dr. Tapia)</span></h2><h3><a name="things-to-do" class="md-header-anchor"></a><span>Things To Do</span></h3><ul><li><span>Form teams. Build Binders. Choose and Install Annotation software.</span></li></ul><p>&nbsp;</p><h2><a name="topic-2-what-is-science" class="md-header-anchor"></a><span>Topic 2: What is science</span></h2><h3><a name="material" class="md-header-anchor"></a><span>Material</span></h3><ul><li><span>Reading Material available at: </span><a href='https://epdf.tips/download/an-introduction-to-science-and-technology-studies-second-edition.html'><span>An Introducation to Science and Technology</span></a></li></ul><h3><a name="rresentation--reading-notes" class="md-header-anchor"></a><span>Rresentation &amp; Reading Notes</span></h3><ul><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/What%20is%20Science%20.pdf'><span>Rresentation</span></a></li><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week1.pdf'><span>Reading Notes</span></a></li></ul><h2><a name="topic-3-what-is-theory" class="md-header-anchor"></a><span>Topic 3: What is Theory?</span></h2><h3><a name="material-n38" class="md-header-anchor"></a><span>Material</span></h3><ul><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/ReadingMaterials/Mathewman.pdf'><span>Text Book Matthewman</span></a></li><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/ReadingMaterials/What%20theory%20is%20not.pdf'><span>What Theory is Not</span></a></li><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/ReadingMaterials/Comments%20on%20%22What%20Theory%20is%20Not%22.pdf'><span>Comments on&quot; What Theory is Not&quot;</span></a></li><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/ReadingMaterials/What%20theory%20is%20not%2C%20theorizing%20is.pdf'><span>What Theory is Not, Theorizing Is”</span></a></li></ul><h3><a name="rresentation--reading-notes-n48" class="md-header-anchor"></a><span>Rresentation &amp; Reading Notes</span></h3><ul><li><p><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week2.pdf'><span>Reading Notes</span></a></p></li><li><p><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/What%20is%20theory_.pdf'><span>Presentation</span></a></p><p>&nbsp;</p></li></ul><h3><a name="class-notes" class="md-header-anchor"></a><span>Class notes</span></h3><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="{.sh}"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="{.sh}"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">-- Theory is a process. We are creating the theory. It is a iterative process.</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">-- Theory is not what, it is how. How can this thing happens. It must be active.</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 52px;"></div><div class="CodeMirror-gutters" style="display: none; height: 52px;"></div></div></div></pre><p>&nbsp;</p><h2><a name="topic-4-technological-determinism-and-functionalism" class="md-header-anchor"></a><span>Topic 4: Technological Determinism and Functionalism?</span></h2><h3><a name="rresentation--reading-notes-n59" class="md-header-anchor"></a><span>Rresentation &amp; Reading Notes</span></h3><ul><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week3.pdf'><span>Reading Notes</span></a></li><li><a href='[Technological Determinism.pdf](https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/Technological Determinism.pdf)'><span>Presentation</span></a></li></ul><p>&nbsp;</p><h2><a name="topic-5-social-construction-of-technology" class="md-header-anchor"></a><span>TOPIC 5: Social Construction of Technology</span></h2><h3><a name="rresentation--reading-notes-n67" class="md-header-anchor"></a><span>Rresentation &amp; Reading Notes</span></h3><ul><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week4.pdf'><span>Reading Notes</span></a></li><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/SocialConstruction%20ofTechnology.pdf'><span>Presentation</span></a></li></ul><h3><a name="in-class-notes" class="md-header-anchor"></a><span>In Class Notes</span></h3><p><strong><span>Social Construction:</span></strong><span>The scientific and technological construction of material and social environments.</span></p><p><strong><span>Heterogeneous Construction:</span></strong><span> Science Technology build environment, Laboratory Equipment, Established Knowledge, Construct Network and so no .</span></p><p><strong><span>Construction of Kind:</span></strong></p><ol start='' ><li><p><span>Nominalish</span></p><ul><li><span>Kinds are human impositions.</span></li><li><span>Socially constructed by people.</span></li><li><span>Only individual objects are real.</span></li></ul></li><li><p><span>Realist</span></p><ul><li><span>Kinds are real features of the world.</span></li><li><span>Kinds are external to people.</span></li></ul></li></ol><h4><a name="some-concepts" class="md-header-anchor"></a><span>Some concepts:</span></h4><ol start='' ><li><p><span>Symmetry: The </span><em><span>Principle of Symmetry</span></em><span> holds that in explaining the origins of scientific beliefs, that is, assessing the success and failure of models, theories, or experiments, the historian/sociologist should deploy the same </span><em><span>kind</span></em><span> of explanation in the cases of success as in cases of failure. In technology, not the advance technology many be used in the future.</span></p></li><li><p><span>Interpretative flexibility: mean that for a single product, different people can view and use it in different way.</span></p></li><li><p><span>Relevant social groups: The most basic relevant groups are the </span><em><span>users</span></em><span> and the </span><em><span>producers</span></em><span> of the technological artifact, but most often many subgroups can be delineated – users with different socioeconomic status, competing producers, etc.</span></p></li><li><p><span>Design flexibility: Just as technologies have different meanings in different social groups, there are always multiple ways of constructing technologies. A particular design is only a single point in the large field of technical possibilities, reflecting the interpretations of certain relevant groups.</span></p></li><li><p><span>Problem and conflicts: The different interpretations often give rise to conflicts between criteria that are hard to resolve technologically (e.g., in the case of the bicycle, one such problem was how a woman could ride the bicycle in a skirt while still adhering to standards of decency), </span></p></li><li><p><span>Closure: Over time, as technologies are developed, the interpretative and design flexibility collapse through closure mechanisms. </span></p><ul><li><p><strong><span>Rhetorical closure</span></strong></p></li><li><p><strong><span>Redefinition of the problem</span></strong></p><p>&nbsp;</p></li></ul></li></ol><h2><a name="topic-6-actor-network-theory" class="md-header-anchor"></a><span>TOPIC 6: Actor Network Theory</span></h2><h3><a name="rresentation--reading-notes-n115" class="md-header-anchor"></a><span>Rresentation &amp; Reading Notes</span></h3><ul><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week5.pdf'><span>Reading Notes</span></a></li><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/Actor-Network%20Theory.pdf'><span>Presentation</span></a></li></ul><h3><a name="class-notes-n121" class="md-header-anchor"></a><span>Class Notes</span></h3><ul><li><span>Actor network theory is a method rather rather a theory because it is just a describe.</span></li></ul><p>&nbsp;</p><h2><a name="topic-7do-artifacts-have-politics" class="md-header-anchor"></a><span>TOPIC 7:Do Artifacts Have Politics?</span></h2><h3><a name="rresentation--reading-notes-n129" class="md-header-anchor"></a><span>Rresentation &amp; Reading Notes</span></h3><ul><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week6.pdf'><span>Reading Notes</span></a></li><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/Green%20Team%20-%20Do%20Artifacts%20Have%20Politics_.pdf'><span>Presentation</span></a></li></ul><h3><a name="in-class-notes-n135" class="md-header-anchor"></a><span>In class Notes</span></h3><ul><li><span>science and technology are nalways influenced by government, society, and culture.</span></li></ul><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h2><a name="topic-8-middle-term-testing" class="md-header-anchor"></a><span>TOPIC 8: Middle term testing?</span></h2><h3><a name="quizs" class="md-header-anchor"></a><strong><span>Quizs:</span></strong></h3><ol start='' ><li><span>Drawing from the assigned readings in the class, describe 2 or more definitions of the concept of &quot;theory.&quot; What is theory? after describing other&#39;s opinions please provide your own. What do you think theory is? or, how is theory useful to you?</span></li><li><span>Choose any object. Imagine you were conducting a research study on this object. Apply the theory of social construction of technology to the study of this object. Describe how you would go about using the theory to study the object.</span></li><li><span>Write a research proposition/hypothesis that a technological determinist would use. Explain why it is appropriate to the theoretical approach.  Explain how you could measure/test this. Offer two criticisms of this approach. </span></li><li><span>What role did Thomas Kuhn have in the understanding the concept of &quot;science?&quot; What was the common understanding of science before Kuhn?  How did Kuhn&#39;s ideas shape modern scientific practice?</span></li><li><span>Why is Actor Network Theory more of a method than a theory? </span></li></ol><hr /><center> Middle Term</center><p>&nbsp;</p><h2><a name="topic-9-politics-science-and-the-public--theory-showcase-structuration-and-adaptive-structuration-theories" class="md-header-anchor"></a><span>Topic 9: Politics, Science and the Public  (Theory Showcase: Structuration and Adaptive Structuration Theories)</span></h2><p>&nbsp;</p><h3><a name="rresentation--reading-notes-n162" class="md-header-anchor"></a><span>Rresentation &amp; Reading Notes</span></h3><ul><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week9.pdf'><span>Reading Notes</span></a></li><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/PoliticsScienceandthePublic.pdf'><span>Presentation</span></a></li></ul><p>&nbsp;</p><p>&nbsp;</p><h2><a name="topic10-theory-showcase-diffusions-of-innovation-theory" class="md-header-anchor"></a><span>Topic10: Theory Showcase: Diffusions of Innovation Theory</span></h2><h3><a name="rresentation--reading-notes-n171" class="md-header-anchor"></a><span>Rresentation &amp; Reading Notes</span></h3><ul><li><a href=''><span>Host the lecture, no reading notes</span></a></li><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/Theory%20Showcase_%20Diffusionsof%20Innovation%20Theory.pdf'><span>Presentation</span></a></li></ul><h2><a name="topic11-theory-showcase-institutional-theory" class="md-header-anchor"></a><span>Topic11: Theory Showcase: Institutional Theory</span></h2><h3><a name="rresentation--reading-notes-n178" class="md-header-anchor"></a><span>Rresentation &amp; Reading Notes</span></h3><ul><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week11.pdf'><span>Reading Notes</span></a></li><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/Presentation_Week11.pdf'><span>Presentation</span></a></li></ul><h3><a name="in-classs-notes" class="md-header-anchor"></a><span>In classs notes：</span></h3><p>&nbsp;</p><h2><a name="topic12-theory-showcase-institutional-theoryeveryday-life-with-internet" class="md-header-anchor"></a><span>Topic12: Theory Showcase: Institutional Theory(Everyday Life with Internet)</span></h2><h3><a name="rresentation--reading-notes-n187" class="md-header-anchor"></a><span>Rresentation &amp; Reading Notes</span></h3><ul><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week12.pdf'><span>Reading Notes</span></a></li><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/Presentations/The%20Internet%20in%20everyday%20life.pdf'><span>Presentation</span></a></li></ul><h3><a name="in-classs-notes-n193" class="md-header-anchor"></a><span>In classs notes：</span></h3><p>&nbsp;</p><h2><a name="topic-13-theory-showcase-foucault-and-theories-of-power" class="md-header-anchor"></a><span>Topic 13: Theory Showcase: Foucault and theories of Power </span></h2><h3><a name="rresentation--reading-notes-n196" class="md-header-anchor"></a><span>Rresentation &amp; Reading Notes</span></h3><ul><li><a href='https://github.com/zhilongwang/PSUClasses/blob/master/IST530/ReadingNotes/week13.pdf'><span>Reading Notes</span></a></li><li><a href=''><span>Presentation</span></a></li></ul><h3><a name="in-classs-notes-n202" class="md-header-anchor"></a><span>In classs notes：</span></h3><p><span>Why big data isn&#39;t new:</span></p><ol start='' ><li><span>Data belongs to the object or phenomenon under investigation; it is material collected about the research object.</span></li><li><span>Data exists prior to analysis.</span></li><li><span>Data is the most divisible or atomized useful unit of analysis.</span></li></ol><h5><a name="media-globalization-technology" class="md-header-anchor"></a><span>Media, globalization, technology</span></h5><p><span>Media</span></p><ol start='' ><li><span>Need of theory of media</span></li><li><span>Limited effects related to social orders and powers</span></li></ol><p><span>Micro v.s. Macro</span></p><ol start='' ><li><span>Global cultural thickening of connection?</span></li><li><span>Limited/fragmented by linguistic and geographical lines.</span></li></ol><p><span>Global?</span></p><ol start='' ><li><span>Some pattens are global: tetheredness to infomation and each other</span></li><li><span>Nations and media systems have some common patterns.</span></li></ol><p><span>Does technology lead to globalization?</span></p><ol start='' ><li><p><span>Moderning or globalizing</span></p><ul><li><span>Without evaluation on the processes.</span></li><li><span>Lags</span></li></ul></li></ol><h5><a name="the-uses-and-limits-of-theory" class="md-header-anchor"></a><span>The uses and limits of Theory</span></h5><p><strong><span>Role of theory:</span></strong></p><ol start='' ><li><p><span>Identify major social problems and tensions (for policymakers and researchers)</span></p></li><li><p><span>Shift the debate about the role of media in society</span></p><ul><li><span>social support</span></li><li><span>information needs</span></li><li><span>visiaility for new groups</span></li><li><span>targeting: new ways to shape attention</span></li></ul></li><li><p><span>Enable new social forces</span></p></li><li><p><span>Guide research</span></p></li></ol><p><strong><span>Limitations:</span></strong></p><ol start='' ><li><span>Applicability</span></li><li><span>Non-users by choice/lacks access</span></li><li><span>Keeping up with the latest technology</span></li></ol><p><strong><span>Technological shaping:</span></strong></p><ol start='' ><li><span>Main factor leading to social change</span></li><li><span>Caging structures of technology across countries</span></li><li><span>Micro and macro</span></li><li><span>Fear of technological shaping - human agency</span></li></ol><h5><a name="mediated-politics" class="md-header-anchor"></a><span>Mediated Politics</span></h5><p><strong><span>One view:</span></strong></p><ol start='' ><li><span>Political science captures the contention or struggle for shapoing society via media, but it exaggerates the openness.</span></li></ol><p><strong><span>Important Question: </span></strong><span>Regarding the quesiton, how to help build a healthy and public environment in social media? How the author talk about and what is your opinion about?</span></p><h2><a name="final-project" class="md-header-anchor"></a><span>Final Project</span></h2><p>&nbsp;</p><p><span>	</span><span>Each team of 3 students will write one final paper together. You will help each other choose and employ a theory in a research context. You may choose the same theory as another student, but must employ it differently. All team members will receive a signal grade. </span></p><p><span>	</span><span>The final paper with have three parts. Each part will be written by all 3 members of the team, but be focused on an individual team member&#39;s research interest. The entire paper will be between 8,000 and 10,000 words. Each section should be of relatively similar size. Each of the three parts will contain the following pieces.</span></p><ol start='' ><li><span>Introduction to a socio-technical problem. </span></li><li><span>A description of the context of the problem.  </span></li><li><span>A brief literature review.</span></li><li><span>An expanded choice and defense of theory to be used. </span></li><li><span>Research question(s). </span></li><li><span>Potential methods. </span></li><li><span>Bibliography. </span></li></ol><p><span>Deliverables:</span></p><p><strong><span>1) Parts 1, 2 and 3 for each student--</span></strong><span>Due Wednesday October 16th.</span></p><p><strong><span>2)</span></strong><span> </span><strong><span>Final Paper.</span></strong><span>  Due Wednesday December 11th.  </span></p><p><span>TOOLS:</span></p><p><span>Your projects must use social science theories  (a full list of theories is found here </span><a href='https://is.theorizeit.org/wiki/Main_Page'><span>theorizeit.org</span></a><span>)</span></p><p><a href='https://is.theorizeit.org/wiki/Evolutionary_theory'><span>Evolutionary theory</span></a></p><p><span>Social Influence theory.</span></p><p>&nbsp;</p><p><span>Final draft requirement:</span></p><p><strong><span>PROPOSAL (not finished research) 10,000 words. Approximately 3000 words per teammate. Includes Introduction, background/context, literature review, theory choice and defense, proposed methods and data. Bibliography.</span></strong><span> </span></p><h3><a name="notice-for-mini-project" class="md-header-anchor"></a><span>Notice for mini project:</span></h3><ol start='' ><li><span>Social problem.</span></li><li><span>Research quesiton.</span></li><li><span>Short literature reviw.</span></li><li><span>Collect data and process data.</span></li></ol><h3><a name="feadback-from-professor" class="md-header-anchor"></a><span>Feadback from Professor</span></h3><ol start='' ><li><span>Important to put the Question.</span></li><li><span>Literature review should about the security question.</span></li><li><span>Move second paragraph to first. </span><strong><span>DONE</span></strong></li><li><span>Introduction to the social problem. response to the problem.</span></li><li><span>Move the last part of introduction to the context.</span></li><li><span>Move the context part to the theory choice.</span></li><li><span>Leature review leading to my question.</span></li><li><span>We choose a theory do not necesary to solve the problem but to explain the problem.</span></li></ol><p>&nbsp;</p><h2><a name="things-to-do-before-the-end-of-this-semester" class="md-header-anchor"></a><span>Things to do before the end of this semester</span></h2><p><span>final exam, final proposal and binder.</span></p><h2><a name="qualify-exam-requirement" class="md-header-anchor"></a><span>Qualify Exam Requirement</span></h2><ol start='' ><li><p><span>You need to three paper in three different area. (social informatic, computer science, HCI)</span></p></li><li><p><span>Portfolio wubmitted to Graduate Programs 3/20/2020 Program staff creates and populates student folders.</span></p><p><strong><span>Preparing your portfolio: </span></strong></p><ul><li><span>A version of your CV, customized as relevant for purposes of the Qualifying Exam.</span></li><li><span>A table listing all graduate IST courses taken in Fall 2019 and Spring 2019, with grades and expected grades.</span></li><li><span>500-words research abstract.</span></li></ul></li></ol><p><strong><span>Materials: </span></strong><a href='https://github.com/zhilongwang/PSUClasses/blob/master/QualifyExam/IST%20PhD%20Qualifying%20Examination.pdf'><span>IST PhD Qualifying Examination</span></a></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm" lang="{.sh}"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="{.sh}"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 26px;"></div><div class="CodeMirror-gutters" style="display: none; height: 26px;"></div></div></div></pre></div>
+</body>
+</html>
