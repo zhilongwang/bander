@@ -46,9 +46,9 @@
 ### Material
 
 - [Text Book Matthewman](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/ReadingMaterials/Mathewman.pdf)
-- [What Theory is Not](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/ReadingMaterials/What%20theory%20is%20not.pdf)
-- [Comments on" What Theory is Not"](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/ReadingMaterials/Comments%20on%20%22What%20Theory%20is%20Not%22.pdf)
-- [What Theory is Not, Theorizing Is”](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/ReadingMaterials/What%20theory%20is%20not%2C%20theorizing%20is.pdf)
+- [what_theory_is_not](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/ReadingMaterials/what_theory_is_not.pdf)
+- [Comments_on_what_theory_is_not.pdf](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/ReadingMaterials/Comments_on_what_theory_is_not.pdf)
+- [what_theory_is_not_theorizing_is](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/ReadingMaterials/what_theory_is_not_theorizing_is.pdf)
 
 ### Rresentation & Reading Notes
 
@@ -175,6 +175,10 @@
 
 ##Topic 9: Politics, Science and the Public  (Theory Showcase: Structuration and Adaptive Structuration Theories)
 
+### Material
+
+- Reading Material available at: [**Sismondo: **chapters 15, 16, and 17](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/ReadingMaterials/Sismondo.pdf)
+
 ### Rresentation & Reading Notes
 
 - [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week9.pdf)
@@ -184,7 +188,11 @@
 
 
 
-##Topic10: Theory Showcase: Diffusions of Innovation Theory
+##Topic10: Subjective and Objective: Diffusions of Innovation Theory
+
+### Material
+
+- Reading Material available at: [**Mathewman: ** Chapters 7, 8, and conclusion](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/ReadingMaterials/Mathewman.pdf)
 
 ### Rresentation & Reading Notes
 
@@ -193,33 +201,54 @@
 
 ##Topic11: Theory Showcase: Media
 
+### Material
+
+- Reading Material available at: [**Schroeder: **Chapters 2 and 3](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/ReadingMaterials/Schroeder_social_theory_after_the_internet.pdf)
+
 ### Rresentation & Reading Notes
 
 - [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week11.pdf)
 - [Presentation](https://github.com/zhilongwang/bander/blob/master/Presentations/media.pdf)
 
-### In classs notes：
+
 
 
 
 ##Topic12: Theory Showcase: Institutional Theory (Everyday Life with Internet)
+
+### Material
+
+- Reading Material available at: [**Shroeder: ** Chapters 4 and 5](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/ReadingMaterials/Schroeder_social_theory_after_the_internet.pdf)
 
 ### Rresentation & Reading Notes
 
 - [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week12.pdf)
 - [Presentation](https://github.com/zhilongwang/bander/blob/master/Presentations/the_internet_in_everyday_life.pdf)
 
-### In classs notes：
+### Summary material
+
+- [Institutional theory](https://en.wikipedia.org/wiki/Institutional_theory)
+- [Institutional theory lecture](https://www.uio.no/studier/emner/matnat/ifi/IN5210/h17/lecture-slides/institutional-theory.pdf)
 
 
 
 ##Topic 13: Theory Showcase: Foucault and theories of Power 
+
+### Material
+
+- Reading Material available at: [**Shroeder: **Chapter 6 and 7](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/ReadingMaterials/Schroeder_social_theory_after_the_internet.pdf)
 
 ### Rresentation & Reading Notes
 
 - [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week13.pdf)
 - [Presentation_big_data](https://github.com/zhilongwang/bander/blob/master/Presentations/big_data.pdf)
 - [Presentation_future](https://github.com/zhilongwang/bander/blob/master/Presentations/Futures.pdf)
+
+### Summary material
+
+- [Power Knowledge](https://en.wikipedia.org/wiki/Power-knowledge)
+- [Introduction to Michel Foucault, Module on Power](https://cla.purdue.edu/academic/english/theory/newhistoricism/modules/foucaultpower.html)
+- [Michel Foucault and Power](https://cla.purdue.edu/academic/english/theory/newhistoricism/modules/foucaultpower.html)
 
 ### In classs notes：
 
