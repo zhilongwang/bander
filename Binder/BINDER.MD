@@ -361,9 +361,12 @@ final exam, final proposal and binder.
    - A table listing all graduate IST courses taken in Fall 2019 and Spring 2019, with grades and expected grades.
    - 500-words research abstract.
 
-**Materials: **[IST PhD Qualifying Examination](https://github.com/zhilongwang/bander/blob/master/QualifyExam/2018-19%20QE%20Rubric%20-%20Portfolio.pdf)
+**Materials: **
 
+1. [QualifyExam](https://github.com/zhilongwang/bander/tree/master/QualifyExam)
 
+2. [2018_qualify_examination](https://github.com/zhilongwang/bander/blob/master/QualifyExam/2018_qualify_examination.pdf)
+3. [spring_2020_qualifying_exam](https://github.com/zhilongwang/bander/blob/master/QualifyExam/spring_2020_qualifying_exam.pdf)
 
 
 
