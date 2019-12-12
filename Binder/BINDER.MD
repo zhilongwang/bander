@@ -149,14 +149,6 @@
 
 - Science and technology are nalways influenced by government, society, and culture.
 
-
-
-
-
-
-
-
-
 ## TOPIC 8: Middle term testing?
 
 ### **Quizs:**
@@ -166,11 +158,6 @@
 3. Write a research proposition/hypothesis that a technological determinist would use. Explain why it is appropriate to the theoretical approach.  Explain how you could measure/test this. Offer two criticisms of this approach. 
 4. What role did Thomas Kuhn have in the understanding the concept of "science?" What was the common understanding of science before Kuhn?  How did Kuhn's ideas shape modern scientific practice?
 5. Why is Actor Network Theory more of a method than a theory? 
-
----------------
-
-<center> Middle Term
-
 
 
 ##Topic 9: Politics, Science and the Public  (Theory Showcase: Structuration and Adaptive Structuration Theories)
@@ -183,8 +170,6 @@
 
 - [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week9.pdf)
 - [Presentation](https://github.com/zhilongwang/bander/blob/master/Presentations/politics_science_and_the_public.pdf)
-
-
 
 
 
@@ -209,8 +194,6 @@
 
 - [Reading Notes](https://github.com/zhilongwang/bander/blob/master/ReadingNotes/week11.pdf)
 - [Presentation](https://github.com/zhilongwang/bander/blob/master/Presentations/media.pdf)
-
-
 
 
 
@@ -319,7 +302,7 @@ Does technology lead to globalization?
 
 ## Final Project
 
-
+### Basic Requirements
 
 ​	Each team of 3 students will write one final paper together. You will help each other choose and employ a theory in a research context. You may choose the same theory as another student, but must employ it differently. All team members will receive a signal grade. 
 
@@ -371,12 +354,6 @@ Final draft requirement:
 7. Leature review leading to my question.
 8. We choose a theory do not necesary to solve the problem but to explain the problem.
 
-
-
-## Things to do before the end of this semester
-
-final exam, final proposal and binder.
-
 ## Qualify Exam Requirement
 
 1. You need to three paper in three different area. (social informatic, computer science, HCI)
@@ -394,14 +371,4 @@ final exam, final proposal and binder.
 1. [QualifyExam](https://github.com/zhilongwang/bander/tree/master/QualifyExam)
 
 2. [2018_qualify_examination](https://github.com/zhilongwang/bander/blob/master/QualifyExam/2018_qualify_examination.pdf)
-3. [spring_2020_qualifying_exam](https://github.com/zhilongwang/bander/blob/master/QualifyExam/spring_2020_qualifying_exam.pdf)
-
-
-
-
-
-
-
-~~~~{.sh}
-$                                                                                 $
-~~~~
+3. [spring_2020_qualifying_exam](https://github.com/zhilongwang/bander/blob/master/QualifyExam/spring_2020_qualifying_exam.pdf)                                                                                 $
