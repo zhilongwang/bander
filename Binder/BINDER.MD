@@ -6,9 +6,11 @@
 
 [TOC]
 
-## Authors
+## Information
 
-- Zhilong Wang <zzw169@psu.edu>
+- Author: Zhilong Wang
+- Email: <zzw169@psu.edu>
+- Online Version: [Binder](https://github.com/zhilongwang/bander/blob/master/Binder/BINDER.pdf)
 
 
 
