@@ -6,7 +6,7 @@
 
 [TOC]
 
-## Information
+## INFORMATION
 
 - Author: Zhilong Wang
 - Email: <zzw169@psu.edu>
